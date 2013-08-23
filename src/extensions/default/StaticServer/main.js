@@ -32,7 +32,7 @@ define(function (require, exports, module) {
     var AppInit              = brackets.getModule("utils/AppInit"),
         ExtensionUtils       = brackets.getModule("utils/ExtensionUtils"),
         FileUtils            = brackets.getModule("file/FileUtils"),
-        LiveDevServerManager = brackets.getModule("LiveDevelopment/Servers/LiveDevServerManager"),
+        LiveDevServerManager = brackets.getModule("LiveDevelopment/LiveDevServerManager"),
         BaseServer           = brackets.getModule("LiveDevelopment/Servers/BaseServer").BaseServer,
         NodeConnection       = brackets.getModule("utils/NodeConnection"),
         ProjectManager       = brackets.getModule("project/ProjectManager"),

@@ -80,7 +80,7 @@ define(function LiveDevelopment(require, exports, module) {
         EditorManager        = require("editor/EditorManager"),
         FileServer           = require("LiveDevelopment/Servers/FileServer").FileServer,
         FileUtils            = require("file/FileUtils"),
-        LiveDevServerManager = require("LiveDevelopment/Servers/LiveDevServerManager"),
+        LiveDevServerManager = require("LiveDevelopment/LiveDevServerManager"),
         NativeFileError      = require("file/NativeFileError"),
         NativeApp            = require("utils/NativeApp"),
         PreferencesDialogs   = require("preferences/PreferencesDialogs"),

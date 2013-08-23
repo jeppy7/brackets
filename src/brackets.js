@@ -145,7 +145,7 @@ define(function (require, exports, module) {
             Dialogs                 : Dialogs,
             CSSUtils                : require("language/CSSUtils"),
             LiveDevelopment         : require("LiveDevelopment/LiveDevelopment"),
-            LiveDevServerManager    : require("LiveDevelopment/Servers/LiveDevServerManager"),
+            LiveDevServerManager    : require("LiveDevelopment/LiveDevServerManager"),
             DOMAgent                : require("LiveDevelopment/Agents/DOMAgent"),
             Inspector               : require("LiveDevelopment/Inspector/Inspector"),
             NativeApp               : require("utils/NativeApp"),
