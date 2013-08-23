@@ -83,6 +83,7 @@ define(function (require, exports, module) {
     /**
      * @private
      * Update the list of paths that fire "request" events
+     * @return {jQuery.Promise} Resolved by the StaticServer domain when the message is acknowledged.
      */
     StaticServer.prototype._updateRequestFilterPaths = function () {
         if (!this._nodeConnection.connected()) {

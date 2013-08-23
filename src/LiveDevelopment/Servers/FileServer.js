@@ -39,7 +39,7 @@ define(function (require, exports, module) {
      * @constructor
      * Server for file: URLs
      *
-     * @param {!{baseUrl: string, root: string, pathResolver: function(string)}} config
+     * @param {!{baseUrl: string, root: string, pathResolver: function(string): string}} config
      *    Configuration parameters for this server:
      *        baseUrl       - Optional base URL (populated by the current project)
      *        pathResolver  - Function to covert absolute native paths to project relative paths
@@ -63,8 +63,10 @@ define(function (require, exports, module) {
     };
 
     /**
-     * @private
-     * See BaseServer#urlToPath
+     * Convert a file: URL to a absolute file path
+     * @param {string} url
+     * @return {?string} The absolute path for given file: URL or null if the path is
+     *  not a descendant of the project.
      */
     FileServer.prototype.urlToPath = function (url) {
         if (url.indexOf(PREFIX) === 0) {
@@ -76,8 +78,9 @@ define(function (require, exports, module) {
     };
 
     /**
-     * @private
-     * See BaseServer#pathToUrl
+     * Returns a file: URL for a given absolute path
+     * @param {string} path Absolute path to covert to a file: URL
+     * @return {string} Converts an absolute path within the project root to a file: URL.
      */
     FileServer.prototype.pathToUrl = function (path) {
         return encodeURI(PREFIX + path);

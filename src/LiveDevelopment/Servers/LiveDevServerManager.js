@@ -52,7 +52,10 @@ define(function (require, exports, module) {
     var _serverProviders   = [];
 
     /**
+     * @private
      * Comparator to sort providers based on their priority
+     * @param {number} a
+     * @param {number} b
      */
     function _providerSort(a, b) {
         return b.priority - a.priority;
@@ -61,7 +64,7 @@ define(function (require, exports, module) {
     /**
      * Determines which provider can serve a file with a local path.
      *
-     * @param {String} localPath A local path to file being served.
+     * @param {string} localPath A local path to file being served.
      * @return {?BaseServer} A server no null if no servers can serve the file
      */
     function getServer(localPath) {
@@ -89,7 +92,7 @@ define(function (require, exports, module) {
      *
      * @param {BaseServer|{create: function():BaseServer}} provider
      *  The provider to be registered, described below.
-     * @param {Integer} priority
+     * @param {number} priority
      *  A non-negative number used to break ties among providers for a
      *  particular url. Providers that register with a higher priority will
      *  have the opportunity to provide a given url before those with a

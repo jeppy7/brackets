@@ -246,7 +246,7 @@ define(function LiveDevelopment(require, exports, module) {
      * Create a live version of a Brackets document
      * @param {Document} doc
      * @param {Editor} editor
-     * @return {HTMLDocument|CSSDocument}
+     * @return {?(HTMLDocument|CSSDocument)}
      */
     function _createDocument(doc, editor) {
         var DocClass = _classForDocument(doc);
@@ -955,7 +955,7 @@ define(function LiveDevelopment(require, exports, module) {
         }
     }
 
-    function _createConfig() {
+    function _getCurrentProjectConfig() {
         return {
             baseUrl: ProjectManager.getBaseUrl(),
             pathResolver: ProjectManager.makeProjectRelativeIfPossible,
@@ -964,11 +964,11 @@ define(function LiveDevelopment(require, exports, module) {
     }
     
     function _createUserServer() {
-        return new UserServer(_createConfig());
+        return new UserServer(_getCurrentProjectConfig());
     }
     
     function _createFileServer() {
-        return new FileServer(_createConfig());
+        return new FileServer(_getCurrentProjectConfig());
     }
 
     /** Initialize the LiveDevelopment Session */

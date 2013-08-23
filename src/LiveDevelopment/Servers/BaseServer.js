@@ -31,7 +31,7 @@ define(function (require, exports, module) {
      * @constructor
      * Base class for live preview servers
      *
-     * @param {!{baseUrl: string, root: string, pathResolver: function(string)}} config
+     * @param {!{baseUrl: string, root: string, pathResolver: function(string): string}} config
      *    Configuration parameters for this server:
      *        baseUrl       - Optional base URL (populated by the current project)
      *        pathResolver  - Function to covert absolute native paths to project relative paths
